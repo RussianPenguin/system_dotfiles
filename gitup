@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if test "$#" -ne 1; then
+    echo "usage: $0 <dirname>"
+		echo "Find and update all git repos in specified folder"
+    exit 1
+fi
+
+if [ -d $1 ]; then
+	find $1 -type d -name .git | xargs -n 1 dirname | sort | while read line; do echo "Update repo $line" && pushd `pwd` > /dev/null && cd $line && git pull && popd > /dev/null; done
+else
+	echo "\"$1\" is not exists"
+fi
