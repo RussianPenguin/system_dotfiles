@@ -3,5 +3,5 @@ cliUtils
 
 Command-line utils for linux
 
-gtranslate <from> <to> <text> - translate <text> from <from> language to <to> language
-gitup <path> - update all git repos in existing <path>
+* gtranslate &lt;from&gt; &lt;to&gt; &lt;text&gt; - translate &lt;text&gt; from &lt;from&gt; language to &lt;to&gt; language
+* gitup &lt;path&gt; - update all git repos in existing &lt;path&gt;
