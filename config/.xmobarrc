@@ -1,0 +1,32 @@
+Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , allDesktops =      True
+       , overrideRedirect = True
+       , pickBroadest =     False
+       , persistent =       True
+       , hideOnStart =      False
+       , lowerOnStart =     True
+       , position = BottomP 0 80
+       , commands = [ Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: kB/s
+                             , "--High"     , "5000"       -- units: kB/s
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 10
+                    , Run Cpu ["-L","15","-H","50","--normal","green","--high","red"] 10
+                    , Run CoreTemp ["-t", "T: <core0>C, <core1>C, <core2>C, <core3>C",
+                         "-L","40","-H","70",
+                         "-l","lightblue",
+                         "-n","gray90","-h","red"] 50
+                    , Run Memory ["-t","M: <usedratio>%"] 20
+                    , Run Com ".xmonad/bin/volume.sh" [] "volume" 10
+                    , Run Swap ["-t", "S: <usedratio>%"] 20
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %cpu% | %coretemp% | %memory% * %swap% | %dynnetwork% | %volume% | %date%"
+       }

@@ -1,0 +1,4 @@
+#include ".Xresources.d/urxvt.conf"
+#include ".Xresources.d/fonts.conf"
+#include ".Xresources.d/colors-solarize.conf"
+#include ".Xresources.d/mouse.conf"
