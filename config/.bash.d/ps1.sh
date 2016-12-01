@@ -7,7 +7,7 @@
 # source "${HOME}/.bash/git-prompt/main.sh"
 . "/usr/share/git-core/contrib/completion/git-prompt.sh"
 # svn prompt
-. "${HOME}/.bash/svn-prompt/svn-prompt.sh"
+. "${HOME}/.bash.d/svn-prompt/svn-prompt.sh"
 
 # configure git-prompt options
 GIT_PS1_SHOWDIRTYSTATE=1
