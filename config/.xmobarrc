@@ -21,7 +21,7 @@ Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
                          "-l","lightblue",
                          "-n","gray90","-h","red"] 50
                     , Run Memory ["-t","M: <usedratio>%"] 20
-                    , Run Com ".xmonad/bin/volume.sh" [] "volume" 10
+                    , Run Com "bin/volume.sh" [] "volume" 10
                     , Run Swap ["-t", "S: <usedratio>%"] 20
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run StdinReader
