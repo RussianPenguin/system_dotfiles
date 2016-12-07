@@ -41,7 +41,7 @@ for file in ${__DOT_DIR__}/.[^.]*; do
 		fi
 		cp $file "${__DEST__}"
 	elif [ -d $file ]; then
-		if [ ! -d "${__DEST__}/${__BASENAME__}" ] && [ -a "${__DEST__}/${__BASENAME__}" ]; then
+		if [ -L "${__DEST__}/${__BASENAME__}" ]; then
 			# destination is symlink or simple file
 			rm "${__DEST__}/${__BASENAME__}"
 		fi

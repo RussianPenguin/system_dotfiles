@@ -53,6 +53,7 @@ main = do
 				ewmhDesktopsEventHook
 				docksEventHook
 				fullscreenEventHook -- Full screen setup
+		, startupHook = customStartupHook
 		, layoutHook = customLayoutHooks
 		-- setup three independent workspaces
 		-- http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Layout-IndependentScreens.html
@@ -175,3 +176,7 @@ customNamedScratchPads =
 		quakeWindow = customFloating $ W.RationalRect (0) (0) (1) (0.2)
 		windowRectFloat = customFloating $ W.RationalRect (1/10) (1/10) (4/5) (4/5)
 
+customStartupHook :: X()
+customStartupHook = do
+	-- see https://github.com/xmonad/xmonad/issues/42
+	spawn "xprop -root -remove _NET_WORKAREA"

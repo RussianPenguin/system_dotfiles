@@ -1,4 +1,4 @@
-syntax "ascii art todo" "todo\.txt$"
+syntax "ascii_art_todo" "todo\.txt$"
 
 ## [√] Done
 color green "\[√\]"
