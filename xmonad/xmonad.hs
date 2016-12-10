@@ -22,6 +22,8 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.ToggleLayouts
 import XMonad.Layout.Tabbed
 import XMonad.Layout.StackTile
+import XMonad.Layout.PerWorkspace
+import XMonad.Layout.IM
 
 import XMonad.Actions.Warp
 import XMonad.Actions.SpawnOn
@@ -59,7 +61,7 @@ main = do
 		-- http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Layout-IndependentScreens.html
 		--, workspaces = withScreens 3 ["web", "ide"] -- ++ map show [3..9 :: Int] 
 		--, workspaces = ["web", "email", "irc"]
-		, workspaces = ["web", "ide", "debug", "admin", "vm", "irc"] ++ ["7", "8", "9"]
+		, workspaces = ["web", "ide", "debug", "admin", "vm", "irc", "video"] ++ ["8", "9"]
 		, manageHook = manageSpawn <+> customManageHooks <+> manageHook defaultConfig 
 		, logHook = dynamicLogWithPP xmobarPP
 			{ ppOutput = hPutStrLn xmproc
@@ -111,7 +113,11 @@ main = do
 			customFocusedBorderColor = "#33CCFF"
 
 
-customLayoutHooks = trackFloating $ toggle $ tallLayout ||| stackLayout ||| fullLayout
+customLayoutHooks = 
+	onWorkspaces ["ide", "video"] fullLayout $
+	trackFloating 
+	$ toggle 
+	$ tallLayout ||| stackLayout ||| fullLayout
 	where
 		basicVertical = smartBorders $ Tall 1 (3/100) (2/3)
 		basicHorizontal = smartBorders $ StackTile 1 (3/100) (2/3)
@@ -125,6 +131,7 @@ customManageHooks =
 	<+> composeAll
 		[ className =? "Plugin-container" --> doFloat
 		, className =? "Firefox" --> doShift "web"
+		, className =? "vlc" --> doShift "video"
 		, (className =? "Firefox" <&&> resource /? "Navigator") --> doFloat
 		, className =? "jetbrains-phpstorm" --> doShift "ide"
 		-- Saleae Logic software fix
@@ -136,7 +143,7 @@ customManageHooks =
 		-- games
 		, className =? "explorer.exe" --> doCenterFloat
 		, className =? "Gothic.exe" --> doShift "admin"
-		, isDialog --> doCenterFloat
+		, isDialog --> doF W.shiftMaster <+> doFloat
 		, isFullscreen --> doFullFloat
 		]
 	<+> namedScratchpadManageHook customNamedScratchPads
