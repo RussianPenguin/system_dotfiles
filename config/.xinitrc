@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # set default DE to fetch variables for Qt4/5
-export SAL_GTK_USE_PIXMAPPAINT=1
+#export SAL_GTK_USE_PIXMAPPAINT=1
 export XDG_CURRENT_DESKTOP=GNOME
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-export DESKTOP_SESSION=gnome
+#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+#export DESKTOP_SESSION=gnome
 
 # fix XMonad bug with ewmhDesktopsEventHook
 export _JAVA_AWT_WM_NONREPARENTING=1
