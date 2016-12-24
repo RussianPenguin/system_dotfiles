@@ -37,7 +37,7 @@ export NVM_DIR=~/.nvm
 
 # python virtualenv
 export WORKON_HOME=~/.envs
-source /usr/bin/virtualenvwrapper.sh
+source ${HOME}/.local/bin/virtualenvwrapper.sh
 
 # auto activate virtualenv
 #source ~/.soft/autoenv/activate.sh
