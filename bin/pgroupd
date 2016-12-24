@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+session-read pgroup "$1" | parallel-shell

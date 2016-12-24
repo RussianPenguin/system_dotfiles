@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=compton
+Comment=X Composition Manager
+Exec=compton -c
+Terminal=false
+Type=Application
+NoDisplay=true
+NotShowIn=Unity

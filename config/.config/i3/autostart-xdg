@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+for program in "gnome-settings-daemon" \
+               "gnome-keyring-pkcs11"  \
+               "gnome-keyring-ssh"     \
+               "pulseaudio"            \
+               "nm-applet"
+do
+    run-desktop "/etc/xdg/autostart/$program.desktop" &
+done
+
+for program in ~/.config/autostart/*.desktop
+do
+    run-desktop "$program" &
+done
+
+# to keep processes nicely grouped under this script
+wait

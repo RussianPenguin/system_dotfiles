@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+exec `get-config "$1" "Desktop Entry" "Exec"`

@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+from sys import argv, stdout, version_info
+
+if version_info >= (3, 0):
+    from configparser import SafeConfigParser
+else:
+    from ConfigParser import SafeConfigParser
+
+if __name__ == '__main__':
+    config_file, section, option = argv[1:4]
+    parser = SafeConfigParser()
+    parser.read(config_file)
+    stdout.write(parser.get(section, option) + '\n')

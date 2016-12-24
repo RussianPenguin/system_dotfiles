@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+while read cmd
+do
+    $cmd &
+done
+
+wait

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=numlockx
+Comment=Numlock at startup
+Exec=numlockx
+Terminal=false
+Type=Application
+NoDisplay=true
+NotShowIn=Unity
