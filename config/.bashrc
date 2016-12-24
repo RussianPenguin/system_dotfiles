@@ -25,7 +25,7 @@ tabs 2
 
 # User specific aliases and functions
 
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/vi
 
 # less with syntax highlight
 export LESS="-R"
