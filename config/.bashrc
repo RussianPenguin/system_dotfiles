@@ -47,5 +47,11 @@ source ${HOME}/.bash.d/ps1.sh
 # javafix for matlab
 export MATLAB_JAVA=/usr/lib/jvm/jre
 
-export QSYS_ROOTDIR="/home/.fast${HOME}/.soft/altera_lite/16.0/quartus/sopc_builder/bin"
 export LYNX_LSS="$HOME/.lynx.lss"
+
+# User specific environment and startup programs
+
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+# fix for soft on raid0
+export QSYS_ROOTDIR="/home/.fast${HOME}/.soft/altera_lite/16.0/quartus/sopc_builder/bin"

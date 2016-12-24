@@ -55,7 +55,7 @@ scm_ps1() {
 
 prompt_function() {
 
-	PS1="\[\e[0;37;44m\]$HOSTNAME_PROMPT\[\e[0;34;40m\]$RIGHT_ARROW\[\e[0;37;40m\]$PATH_PROMPT\[\e[0;30;46m\]$RIGHT_ARROW\[\e[1;30;46m\]$(scm_ps1)\[\e[0;36m\]$RIGHT_ARROW\n\[\e[8;37;40m\]$TIME_PROMPT\[\e[0;30m\]$RIGHT_ARROW\[\e[0m\] \$ "
+	PS1="\[\e[0;37;44m\]$HOSTNAME_PROMPT\[\e[0;34;40m\]$RIGHT_ARROW\[\e[0;37;40m\]$PATH_PROMPT\[\e[0;30;46m\]$RIGHT_ARROW\[\e[1;30;46m\]$(scm_ps1)\[\e[0;36m\]$RIGHT_ARROW\n\[\e[0;37;40m\]$TIME_PROMPT\[\e[0;30m\]$RIGHT_ARROW\[\e[0m\] \$ "
 
 }
 
