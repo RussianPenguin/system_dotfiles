@@ -1,0 +1,14 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+order="volume master"
+
+volume master {
+	format = "♪: %volume"
+	format_muted = "♪: muted (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}

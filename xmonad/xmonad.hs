@@ -87,7 +87,8 @@ main = do
 				-- calculator
 				, ((0, 0x1008ff1d), spawn (customTerminal ++ " -e /bin/sh -c 'bc -l'") >> return ())
 				, ((modMask, xK_c), namedScratchpadAction customNamedScratchPads "terminal")
-				, ((modMask, xK_k), namedScratchpadAction customNamedScratchPads "keepass")
+				-- , ((modMask, xK_k), namedScratchpadAction customNamedScratchPads "keepass")
+				, ((modMask, xK_k), spawn "/usr/bin/keepassx" >> return())
 				]
 				++
 				-- https://wiki.haskell.org/Xmonad/Config_archive/Brent_Yorgey's_darcs_xmonad.hs
@@ -165,7 +166,7 @@ qa `endsWith` a = qa >>= return . (isSuffixOf a)
 -- scratchpad helpers (boolean function for create named scratchpad)
 
 isKeePass :: Query Bool
-isKeePass = (className =? "KeePass2")
+isKeePass = (className =? "Keepassx")
 
 isScratchPad :: Query Bool
 isScratchPad = (resource =? "scratchpad")
@@ -174,11 +175,11 @@ isScratchPad = (resource =? "scratchpad")
 customNamedScratchPads :: NamedScratchpads
 customNamedScratchPads = 
 	[
-		NS "terminal" term isScratchPad quakeWindow,
-		NS "keepass" keepass isKeePass windowRectFloat
+		NS "terminal" term isScratchPad quakeWindow
+		-- ,NS "keepass" keepass isKeePass defaultFloating
 	]
 	where
-		keepass = "/usr/bin/keepass"
+		keepass = "/usr/bin/keepassx"
 		term = customTerminal ++ " -name scratchpad"
 		quakeWindow = customFloating $ W.RationalRect (0) (0) (1) (0.2)
 		windowRectFloat = customFloating $ W.RationalRect (1/10) (1/10) (4/5) (4/5)

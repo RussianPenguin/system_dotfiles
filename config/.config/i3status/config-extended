@@ -1,0 +1,52 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+
+order += "ipv6"
+order += "disk /home"
+order += "run_watch DHCP"
+order += "run_watch VPNC"
+order += "path_exists VPN"
+order += "ethernet enp7s4"
+order += "cpu_temperature 0"
+order += "load"
+order += "tztime local"
+
+ethernet enp7s4 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+        # file containing the PID of a vpnc process
+        pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:02/ATK0110:00/hwmon/hwmon0/temp1_input"
+}
+
+disk "/home" {
+        format = "%free (%avail)/ %total"
+}

@@ -49,16 +49,16 @@ for file in ${__DOT_DIR__}/.[^.]*; do
 	fi
 done
 
-echo "Install and build xmonad"
-if [ ! -d "${__DEST__}/.xmonad" ]; then
-	mkdir "${__DEST__}/.xmonad"
-fi
+#echo "Install and build xmonad"
+#if [ ! -d "${__DEST__}/.xmonad" ]; then
+#	mkdir "${__DEST__}/.xmonad"
+#fi
 
-cp -R ${__DIR__}/xmonad/* "${__DEST__}/.xmonad" 
-xmonad --recompile
+#cp -R ${__DIR__}/xmonad/* "${__DEST__}/.xmonad" 
+#xmonad --recompile
 
-echo "Restart xmonad"
-xmonad --restart
+#echo "Restart xmonad"
+#xmonad --restart
 
 
 
