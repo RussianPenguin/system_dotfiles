@@ -236,4 +236,5 @@ for_window [class="jetbrains\-phpstorm"] move container to workspace "2: ide"
 for_window [class="telegram"] move container to workspace "10: irc"
 for_window [class="VirtualBox"] move container to workspace "4: vm"
 
+for_window [class="vlc"] floating enable move absolute position center 
 
