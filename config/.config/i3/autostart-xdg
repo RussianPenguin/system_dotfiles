@@ -2,7 +2,6 @@
 
 for program in "gnome-settings-daemon" \
                "gnome-keyring-pkcs11"  \
-               "gnome-keyring-ssh"     \
                "pulseaudio"            \
                "nm-applet"
 do

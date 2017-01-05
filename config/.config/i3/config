@@ -189,7 +189,7 @@ bindsym 0x1008FF13 exec "amixer -D pulse sset Master 2%+"
 bindsym 0x1008FF12 exec "amixer -D pulse sset Master toggle"
 
 # calculator
-bindsym 0x1008FF1D exec "urxvt -e /bin/sh -c 'bc -l'"
+bindsym 0x1008FF1D exec "urxvt256c-ml -e /bin/sh -c 'bc -l'"
 
 # screenshot
 bindsym Print exec "$HOME/.xmonad/bin/screenshot"

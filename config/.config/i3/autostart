@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
 pgroup i3 kill-group
-pgroup i3 join ~/.config/i3/autostart-xdg &
+pgroup i3 join ${HOME}/.config/i3/autostart-xdg &
 exec pgroupd i3

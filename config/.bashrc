@@ -9,49 +9,18 @@ if [ -f ~/.bash_aliases ]; then
  . ~/.bash_aliases
 fi
 
-# setup mc wrapper
-if [ -f /usr/libexec/mc/mc.sh ]; then
- . /usr/libexec/mc/mc.sh
-fi
-
 # добавляем опции автоматического перехода в папки
 shopt -s autocd
 
 # устанавливаем ширину табов в 2 вместо 8
 tabs 2
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# User specific aliases and functions
-
-export EDITOR=/usr/bin/vi
-
-# less with syntax highlight
-export LESS="-R"
-export LESSOPEN="|pygmentize -g -O encoding=utf8 %s"
-
-# nvm
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# python virtualenv
-export WORKON_HOME=~/.envs
-source ${HOME}/.local/bin/virtualenvwrapper.sh
-
-# auto activate virtualenv
-#source ~/.soft/autoenv/activate.sh
-
-source ${HOME}/.bash.d/ps1.sh
-
-# javafix for matlab
-export MATLAB_JAVA=/usr/lib/jvm/jre
-
-export LYNX_LSS="$HOME/.lynx.lss"
-
-# User specific environment and startup programs
-
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
-# fix for soft on raid0
-export QSYS_ROOTDIR="/home/.fast${HOME}/.soft/altera_lite/16.0/quartus/sopc_builder/bin"
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
