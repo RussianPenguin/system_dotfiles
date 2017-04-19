@@ -23,14 +23,6 @@ if [ ! -d $__DEST__/bin ]; then
 	mkdir $__DEST__/bin
 fi
 
-echo "Install binary files"
-for file in ${__BIN_DIR__}/*; do
-	__BASENAME__=$(basename $file)
-	echo "Install ${__BASENAME__}"
-	cp $file "${__DEST__}/bin"
-	chmod 700 "${__DEST__}/bin/${__BASENAME__}"
-done
-
 echo "Install config files"
 for file in ${__DOT_DIR__}/.[^.]*; do
 	__BASENAME__=$(basename $file)
