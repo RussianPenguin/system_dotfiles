@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=compton
 Comment=X Composition Manager
-Exec=compton -c
+Exec=compton -cCGb
 Terminal=false
 Type=Application
 NoDisplay=true
