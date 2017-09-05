@@ -52,5 +52,7 @@ done
 #echo "Restart xmonad"
 #xmonad --restart
 
-
-
+#install lightsOn
+echo "Install lightsOn script"
+cp "${__DOT_DIR__}/.local/share/lightsOn/lightsOn.sh" "${HOME}/.local/bin/lightsOn"
+chmod 750 "${HOME}/.local/bin/lightsOn"

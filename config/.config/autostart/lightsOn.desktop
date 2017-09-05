@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=lightsOn
+Comment=lightsOn: disable screensaver in fullscreen applications
+Exec=lightsOn
+Terminal=false
+Type=Application
+NoDisplay=true
+NotShowIn=Unity
