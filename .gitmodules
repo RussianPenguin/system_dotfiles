@@ -7,3 +7,6 @@
 [submodule "config/.local/share/lightsOn"]
 	path = config/.local/share/lightsOn
 	url = https://github.com/kodx/lightsOn.git
+[submodule "config/.tmux/plugins/tpm"]
+	path = config/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
