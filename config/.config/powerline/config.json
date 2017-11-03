@@ -1,7 +1,14 @@
 {
 	"ext": {
 		"shell": {
-			"theme": "shell"
-		}
+			"theme": "shell",
+            "colorscheme": "solarized"
+		},
+        "vim": {
+            "colorscheme": "solarized"
+        },
+        "tmux": {
+            "colorscheme": "solarized"
+        }
 	}
 }
