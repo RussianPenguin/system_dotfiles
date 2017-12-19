@@ -5,3 +5,8 @@ alias ydl='youtube-dl -f bestvideo+bestaudio --all-subs --write-info-json --writ
 alias la='ls -a'
 alias g='gvim'
 alias rgrep='grep -R'
+
+# https://plus.google.com/+MikeMitterer/posts/LxbyRsRJuDr
+# systemctl aliases
+alias sc='systemctl'
+alias sc-services='systemctl list-units --type=service | grep --color -E "active running"'
