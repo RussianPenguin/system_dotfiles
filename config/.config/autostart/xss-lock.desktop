@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=compton
+Comment=Lock Xscreen before suspend or hibernate
+Exec=xss-lock -- /usr/bin/xscreensaver-command -lock
+Terminal=false
+Type=Application
+NoDisplay=true
+NotShowIn=Unity;LXDE;
