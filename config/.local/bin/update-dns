@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+function usage {
+    echo "${0} <domain name> <ip address>"
+}
+
+if [ ! $# -eq 2 ]; then
+    usage && exit 1
+fi
+
+TTL=86400
+RECORD=$1
+IP=$2
+(
+    echo "server develop."
+    echo "zone develop"
+ 
+    echo "update delete ${RECORD} A"
+    echo "update add ${RECORD} ${TTL} A ${IP}"
+    echo "send"
+) | /usr/bin/nsupdate
