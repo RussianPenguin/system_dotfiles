@@ -71,5 +71,7 @@ autocmd FileType make set noexpandtab shiftwidth=4 softtabstop=0
 " and set to NASM syntax highlighting
 autocmd FileType asm set noexpandtab shiftwidth=4 softtabstop=0 syntax=nasm
 
+" нуменация строк
 autocmd FileType asm,c,cpp,python set nu
-autocmd FileType asm,c,cpp,python set cc=80
+" визуальное выделение последнего столбца
+autocmd FileType asm,c,cpp,python,tex set cc=80
