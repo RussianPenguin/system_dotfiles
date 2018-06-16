@@ -7,7 +7,7 @@ set expandtab
 set softtabstop=4
 
 let g:airline_powerline_fonts = 1
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
