@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+function setLayout {
+    layouts="${HOME}/.screenlayout"
+    if [ -d $layouts ]; then
+        disp=$(xrandr | awk '/\ connected/{print $1}' | sort |paste -sd '_')
+        if [ ! -z $disp ]; then
+            currentlayout="${layouts}/${disp}.sh"
+            if [ -f $currentlayout ]; then
+                $currentlayout
+            fi
+        fi
+    fi
+}
+
+setLayout
+active=0
+while read line;
+do
+    # skip first few lines on udevadm monitor
+    if [[ $active -eq 0 ]] && [[ ! -z $line ]]; then
+        continue
+    elif [[ $active -eq 0 ]] && [[ -z $line ]]; then
+        active=1
+        continue
+    elif [[ $active -eq 1 ]] && [[ -z $line ]]; then
+        continue
+    elif [[ $active -eq 1 ]] && [[ ! -z $line ]]; then
+        active=2;
+    fi
+    setLayout
+done < <(udevadm monitor -s drm -k)
+# Bash process substitution: http://mywiki.wooledge.org/ProcessSubstitution

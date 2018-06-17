@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Display Hotplug
+Comment=Display hotplug manager
+Exec=display_hotplug
+Terminal=false
+Type=Application
+NoDisplay=true
+NotShowIn=Unity;
