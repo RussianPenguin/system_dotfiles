@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=compton
+Name=XSSLock
 Comment=Lock Xscreen before suspend or hibernate
 Exec=xss-lock -- /usr/bin/xscreensaver-command -lock
 Terminal=false
