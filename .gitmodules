@@ -1,6 +1,3 @@
-[submodule "config/.vim/bundle/Conque-GDB"]
-	path = config/.vim/bundle/Conque-GDB
-	url = https://github.com/vim-scripts/Conque-GDB.git
 [submodule "config/.vim/bundle/vim-colors-solarized"]
 	path = config/.vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git

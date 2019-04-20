@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=XSSLock
 Comment=Lock Xscreen before suspend or hibernate
-Exec=xss-lock -- /usr/bin/xscreensaver-command -lock
+Exec=xss-lock -l -- /usr/bin/xscreensaver-command -lock
 Terminal=false
 Type=Application
 NoDisplay=true
