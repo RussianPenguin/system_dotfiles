@@ -5,4 +5,4 @@ Exec=compton -cCGb
 Terminal=false
 Type=Application
 NoDisplay=true
-NotShowIn=Unity;LXDE;
+NotShowIn=Unity;

@@ -284,26 +284,10 @@
                 <command>pcmanfm</command>
             </action>
         </keybind>
-        <!-- Keybindings for finding files -->
-        <keybind key='W-f'>
-            <action name='Execute'>
-                <command>pcmanfm --find-files</command>
-            </action>
-        </keybind>
         <!-- eybindings for LXPanel -->
-        <keybind key='W-r'>
-            <action name='Execute'>
-                <command>lxpanelctl run</command>
-            </action>
-        </keybind>
         <keybind key='A-F2'>
             <action name='Execute'>
                 <command>lxpanelctl run</command>
-            </action>
-        </keybind>
-        <keybind key='C-Escape'>
-            <action name='Execute'>
-                <command>lxpanelctl menu</command>
             </action>
         </keybind>
         <keybind key='A-F1'>
@@ -340,37 +324,17 @@
                 <command>lxrandr</command>
             </action>
         </keybind>
-        <keybind key='XF86AudioLowerVolume'>
-            <action name='Execute'>
-                <startupnotify>
-                    <enabled>true</enabled>
-                    <name>volumedown</name>
-                </startupnotify>
-                <command>amixer -c 0 set Master 5%- unmute</command>
-            </action>
-        </keybind>
-        <keybind key='XF86AudioRaiseVolume'>
-            <action name='Execute'>
-                <startupnotify>
-                    <enabled>true</enabled>
-                    <name>volumeup</name>
-                </startupnotify>
-                <command>amixer -c 0 set Master 5%+ unmute</command>
-            </action>
-        </keybind>
-        <!-- http://forums.debian.net/viewtopic.php?f=10&t=105145 -->
-        <keybind key='XF86AudioMute'>
-            <action name='Execute'>
-                <startupnotify>
-                    <enabled>true</enabled>
-                    <name>volumedown</name>
-                </startupnotify>
-                <command>sh -c &apos;amixer -c 0 set Master toggle; amixer -c 0 set PCM unmute&apos;</command>
-            </action>
-        </keybind>
         <!-- Keybindings for window tiling -->
         <keybind key='W-Left'># HalfLeftScreen
           
+            
+            
+            
+            
+            
+            
+            
+            
             
             <action name='UnmaximizeFull'/>
             <action name='MoveResizeTo'>
@@ -383,6 +347,14 @@
         <keybind key='W-Right'># HalfRightScreen
           
             
+            
+            
+            
+            
+            
+            
+            
+            
             <action name='UnmaximizeFull'/>
             <action name='MoveResizeTo'>
                 <x>-0</x>
@@ -393,6 +365,14 @@
         </keybind>
         <keybind key='W-Up'># HalfUpperScreen
           
+            
+            
+            
+            
+            
+            
+            
+            
             
             <action name='UnmaximizeFull'/>
             <action name='MoveResizeTo'>
@@ -405,17 +385,20 @@
         <keybind key='W-Down'># HalfLowerScreen
           
             
+            
+            
+            
+            
+            
+            
+            
+            
             <action name='UnmaximizeFull'/>
             <action name='MoveResizeTo'>
                 <x>0</x>
                 <y>-0</y>
                 <width>100%</width>
                 <height>50%</height>
-            </action>
-        </keybind>
-        <keybind key='W-L'>
-            <action name='Execute'>
-                <command>xscreensaver-command --lock</command>
             </action>
         </keybind>
         <keybind key='W-Return'>
@@ -442,6 +425,17 @@
             <action name='DirectionalCycleWindows'>
                 <direction>south</direction>
             </action>
+        </keybind>
+        <keybind key='W-m'>
+            <action name='ToggleDecorations'/>
+        </keybind>
+        <keybind key='W-l'>
+            <action name='Execute'>
+                <command>xset s activate</command>
+            </action>
+        </keybind>
+        <keybind key='W-f'>
+            <action name='ToggleMaximize'/>
         </keybind>
     </keyboard>
     <mouse>
@@ -792,5 +786,9 @@
         <manageDesktops>yes</manageDesktops>
     </menu>
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
-    <applications/>
+    <applications>
+        <application class='*'>
+            <decor>no</decor>
+        </application>
+    </applications>
 </openbox_config>

@@ -5,4 +5,4 @@ Exec=lightsOn
 Terminal=false
 Type=Application
 NoDisplay=true
-NotShowIn=Unity
+NotShowIn=Unity;LXDE;

@@ -17,6 +17,9 @@ python3 del powerline_setup
 set laststatus=2
 set t_Co=256
 
+" toggle last search highlight
+nnoremap <F3> :set hlsearch!<CR>
+
 syntax enable
 if has('gui_running')
     set background=light

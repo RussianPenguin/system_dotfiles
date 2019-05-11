@@ -52,3 +52,5 @@ fi
 
 # зеленый греп
 export GREP_COLOR='1;32'
+export MANPATH=${HOME}/.local/share/man:$MANPATH
+

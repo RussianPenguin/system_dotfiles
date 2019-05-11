@@ -2,11 +2,6 @@ if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
 
-# setup mc wrapper
-if [ -f /usr/libexec/mc/mc.sh ]; then
- . /usr/libexec/mc/mc.sh
-fi
-
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -44,4 +39,7 @@ fi
 export QSYS_ROOTDIR="/home/.fast${HOME}/.soft/altera_lite/16.0/quartus/sopc_builder/bin"
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
-export TERMINAL="urxvt256c-ml"
+export TERMINAL="urxvt-ml"
+
+export XSECURELOCK_BLANK_DPMS_STATE=off 
+export XSECURELOCK_BLANK_TIMEOUT=15
