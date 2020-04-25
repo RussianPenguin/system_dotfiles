@@ -1,9 +1,13 @@
+
 #!/bin/sh
-# Allow screenshot to be selected from cursor, then display shot image.
+# Take screenshot of entire screen (multi-head) and display shot.
 # Author: Vic Fryzel
 # http://github.com/vicfryzel/xmonad-config
 
 
 SCREENSHOT_DIR=$HOME/Pictures/screenshots
 mkdir -p $SCREENSHOT_DIR
-sleep 0.2; scrot -s "$SCREENSHOT_DIR/%Y-%m-%d-%H:%M:%S_\$wx\$h.png" -e "xdg-open \$f"
+FILE=`date +"${SCREENSHOT_DIR}/%Y-%m-%d-%H:%M:%S_select.png"`
+sleep 0.2
+import "${FILE}"
+xdg-open "${FILE}"

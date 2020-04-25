@@ -7,4 +7,7 @@
 
 SCREENSHOT_DIR=$HOME/Pictures/screenshots
 mkdir -p $SCREENSHOT_DIR
-sleep 0.2; scrot -m "$SCREENSHOT_DIR/%Y-%m-%d-%H:%M:%S_\$wx\$h.png" -e "xdg-open \$f"
+FILE=`date +"${SCREENSHOT_DIR}/%Y-%m-%d-%H:%M:%S_full.png"`
+sleep 0.2
+import -window root "${FILE}"
+xdg-open "${FILE}"
